@@ -1,0 +1,45 @@
+
+//Задайте произвольный массив. Выведете его элементы, начиная с конца.
+//Использовать рекурсию
+        static void Main(string[] args)
+        {
+            int[] array = GenerateRandomArray(3);
+            Console.WriteLine(" Исходный массив: ");
+            Console.WriteLine();
+            PrintArray(array);
+
+            Console.WriteLine();
+
+            Console.WriteLine(" перевернуть массив: ");
+            Console.WriteLine();
+            PrintArrayReverse(array, array.Length - 1);
+            Console.WriteLine();
+
+        }
+        static int[] GenerateRandomArray(int size)
+        {
+            int[] randomArray = new int[size];
+            Random = new Random();
+            for (int i = 0; i < size; i++)
+            {
+                randomArray[i] = Next(3, 30);
+            }
+            
+            return randomArray;
+        }
+
+        static void PrintArray(int[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write(array[i] + " ");
+            }
+        }
+        static void PrintArrayReverse(int[] array, int index)
+        {
+            if (index >= 0)
+            {
+                Console.Write(array[index] + " ");
+                PrintArrayReverse(array, index - 1);
+            }
+         }
